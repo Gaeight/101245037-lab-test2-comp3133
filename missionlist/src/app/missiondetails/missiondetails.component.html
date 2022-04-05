@@ -1,0 +1,21 @@
+<div *ngFor="let flight_detail of flight_details | async">
+    <h1>SpaceX Mission Details</h1>
+    <div class="bg-dark text-white p-2 rounded">
+        <h1>Mission - {{flight_detail.mission_name}}</h1>
+        <img src= {{flight_detail.links.mission_patch_small}} class="w-25 h-25" alt="...">
+        <p>Name: {{flight_detail.mission_name}}</p>
+        <p>Launch Year: {{flight_detail.launch_year}}</p>
+        <h1>Rocket</h1>
+        <p>Name: {{flight_detail.rocket.rocket_name}}</p>
+        <p>Type: {{flight_detail.rocket.rocket_type}}</p>
+        <h1>Launch Site</h1>
+        <p>Name: {{flight_detail.launch_site.site_name_long}}</p>
+        <h1>Launch Details</h1>
+        <p>{{flight_detail.details}}</p>
+        <h1>More Info On Launch Details</h1>
+        <a class="btn btn-primary m-2" href={{flight_detail.links.article_link}}>Article Link </a>
+        <a class="btn btn-primary m-2" href={{flight_detail.links.wikipedia}}>Wikipedia </a>
+        <a class="btn btn-primary m-2" href={{flight_detail.links.video_link}}>Youtube </a>
+    </div>
+    
+</div>

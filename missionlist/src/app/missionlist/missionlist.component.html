@@ -1,0 +1,11 @@
+<h1>SpaceX Mission Launch List</h1>
+<div class="d-flex flex-wrap">
+    <div class="card text-center text-dark bg-light" style="width: 18rem;" *ngFor="let missionlist of missionlists | async">
+    <img src= {{missionlist.links.mission_patch_small}} class="card-img-top" alt="...">
+        <div class="card-body">
+        <a routerLink="spacexapi/{{missionlist.flight_number}}">{{missionlist.mission_name}}</a>
+        <p>{{missionlist.launch_year}}</p>
+        <p>{{missionlist.details}}</p>
+        </div>
+    </div>
+</div>
